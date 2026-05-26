@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Путешественник</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game-container">
+    <div id="background-layer"></div>
+    
+    <div class="ui-overlay">
+      <!-- Статус игрока -->
+      <div class="player-card">
+        <div class="avatar-circle">
+          <img src="https://i.postimg.cc/gjtWcrY8/Izobrazenie-Whats-App-2025-11-05-v-22-09-44-b4a7383a.jpg" id="hero-img" alt="Герой">
+        </div>
+        <div class="stats">
+          <h2 id="location-name">Загрузка...</h2>
+          <p>Опыт: <span id="exp">0</span> XP</p>
+        </div>
+      </div>
+
+      <!-- Кнопка музыки -->
+      <button id="music-btn" class="music-control">🎵 Включить музыку</button>
+
+      <!-- Окно диалога с NPC -->
+      <div id="npc-window" class="glass-panel hidden">
+        <div class="npc-header">
+          <span id="npc-icon">👤</span>
+          <strong id="npc-name">Имя NPC</strong>
+        </div>
+        <p id="npc-text">Диалог...</p>
+        <div id="dialog-options"></div>
+      </div>
+
+      <!-- Локационный квест -->
+      <div id="quest-log" class="glass-panel">
+        <h3>Заметки путешественника</h3>
+        <p id="quest-desc">Исследуйте местность...</p>
+        <button id="action-btn" class="hidden">Действие</button>
+      </div>
+
+     <!-- Сумка (Инвентарь) -->
+<div class="inventory glass-panel">
+  <h4>Сумка</h4>
+  <div class="inventory-slots">
+    <div class="slot" id="slot-1"></div>
+    <div class="slot" id="slot-2"></div>
+    <div class="slot" id="slot-3"></div>
+  </div>
+
+    </div>
+
+    <div class="nav-controls">
+      <button onclick="changeLocation(0)">🏠 Город</button>
+      <button onclick="changeLocation(1)">🏛️ Колизей</button>
+      <button onclick="changeLocation(2)">🌲 Берег</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
