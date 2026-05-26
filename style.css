@@ -1,0 +1,181 @@
+:root {
+  --glass: rgba(255, 255, 255, 0.22);
+  --accent: #7fb3d5;
+  --text: #2c3e50;
+}
+
+body { 
+  margin: 0; 
+  font-family: 'Sitka Small', system-ui, serif; 
+  background: #000; 
+  overflow: hidden; 
+}
+
+#game-container { 
+  position: relative; 
+  width: 100vw; 
+  height: 100vh; 
+}
+
+#background-layer { 
+  position: absolute; 
+  width: 100%; 
+  height: 100%; 
+  background-size: cover; 
+  background-position: center; 
+  transition: 1.5s ease; 
+  filter: brightness(0.72); 
+}
+
+.ui-overlay { 
+  position: relative; 
+  z-index: 10; 
+  padding: 25px; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 20px; 
+}
+
+.glass-panel { 
+  background: var(--glass); 
+  backdrop-filter: blur(15px); 
+  border: 1px solid rgba(255,255,255,0.35); 
+  border-radius: 15px; 
+  padding: 15px; 
+  color: white; 
+  max-width: 350px; 
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35); 
+}
+
+.player-card { 
+  display: flex; 
+  align-items: center; 
+  gap: 15px; 
+}
+
+#location-name {
+  color: #ffffff;
+  font-size: 1.45em;
+  margin: 0;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.stats p {
+  color: #ffffff;
+  font-size: 1.1em;
+  margin: 4px 0 0 0;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.75);
+}
+
+.avatar-circle { 
+  width: 60px; 
+  height: 60px; 
+  border-radius: 50%; 
+  border: 2px solid white; 
+  overflow: hidden; 
+  background: #eee; 
+}
+
+.avatar-circle img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+}
+
+#npc-window { border-left: 5px solid #f1c40f; }
+.npc-header { margin-bottom: 10px; font-size: 1.1em; display: flex; gap: 10px; }
+#dialog-options { display: flex; flex-direction: column; gap: 8px; margin-top: 15px; }
+
+.dialog-btn {
+  background: white; 
+  color: var(--text); 
+  border: none; 
+  padding: 10px; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  text-align: left; 
+  transition: 0.3s;
+}
+.dialog-btn:hover { 
+  background: var(--accent); 
+  color: white; 
+  transform: translateX(5px); 
+}
+
+/* === ИНВЕНТАРЬ СПРАВА === */
+.inventory { 
+  position: fixed; 
+  bottom: 100px; 
+  right: 25px;   /* <-- Переместили вправо */
+  display: flex; 
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.inventory h4 {
+  margin: 0 0 8px 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+  font-size: 1.05em;
+}
+
+.inventory-slots {
+  display: flex; 
+  gap: 10px; 
+}
+
+.slot { 
+  width: 55px; 
+  height: 55px; 
+  background: rgba(255,255,255,0.12); 
+  border: 2px dashed rgba(255,255,255,0.6); 
+  border-radius: 12px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-size: 28px; 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: all 0.3s;
+}
+
+.slot:hover {
+  background: rgba(255,255,255,0.25);
+  border-style: solid;
+}
+
+/* Остальные стили */
+.nav-controls { 
+  position: fixed; 
+  bottom: 30px; 
+  width: 100%; 
+  display: flex; 
+  justify-content: center; 
+  gap: 15px; 
+}
+
+button { 
+  padding: 12px 20px; 
+  border-radius: 25px; 
+  border: none; 
+  cursor: pointer; 
+  font-weight: bold; 
+  background: rgba(255,255,255,0.9);
+  color: #2c3e50;
+  transition: 0.3s;
+}
+button:hover { background: #7fb3d5; color: white; }
+
+.music-control {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  padding: 10px 16px;
+  font-size: 1em;
+  background: rgba(0,0,0,0.4);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.4);
+}
+
+.hidden { display: none; }
